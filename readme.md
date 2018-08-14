@@ -38,3 +38,11 @@ python manage.py startapp sampleapp
 python manage.py makemigrations sampleapp
 python manage.py migrate
 ```
+
+## ■ 管理ユーザー作成
+
+```shell
+python manage.py createsuperuser
+```
+
+ユーザー名、Emailアドレス、パスワードを入力する
