@@ -24,3 +24,10 @@ pipenv install rope --dev
 pipenv shell
 django-admin startproject djangosample .
 ```
+
+## ■ アプリケーション作成
+
+```shell
+pipenv shell
+python manage.py startapp sampleapp
+```
