@@ -31,3 +31,10 @@ django-admin startproject djangosample .
 pipenv shell
 python manage.py startapp sampleapp
 ```
+
+## ■ マイグレーション
+
+```shell
+python manage.py makemigrations sampleapp
+python manage.py migrate
+```
