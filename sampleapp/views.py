@@ -27,3 +27,16 @@ def link(request):
 
 def static(request):
     return render(request, "sampleapp/static.html")
+
+def basicform(request):
+    params = {
+        "message": "What your name?",
+    }
+    return render(request, "sampleapp/basicform.html", params)
+
+def basicformsubmit(request):
+    name = request.POST["name"]
+    params = {
+        "message": "Hello {0}!".format(name),
+    }
+    return render(request, "sampleapp/basicform.html", params)
