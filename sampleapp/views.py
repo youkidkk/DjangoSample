@@ -24,3 +24,6 @@ def template(request):
 
 def link(request):
     return render(request, "sampleapp/link.html")
+
+def static(request):
+    return render(request, "sampleapp/static.html")

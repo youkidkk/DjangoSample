@@ -14,4 +14,6 @@ urlpatterns = [
     path('template', views.template, name='template'),
     # ～/link
     path('link', views.link, name='link'),
+    # ～/static
+    path('static', views.static, name='static'),
 ]
