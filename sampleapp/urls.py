@@ -10,6 +10,6 @@ urlpatterns = [
     # ～/urlpattern/<number>/<text>/
     path('urlpattern/<int:number>/<text>/',
          views.urlpattern, name='urlpattern'),
-    # ～/sampletmpl
+    # ～/template
     path('template', views.template, name='template')
 ]
