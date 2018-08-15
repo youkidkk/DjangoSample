@@ -19,4 +19,6 @@ urlpatterns = [
     # ～/basicform
     path('basicform', views.basicform, name='basicform'),
     path('basicformsubmit', views.basicformsubmit, name='basicformsubmit'),
+    # ～/form
+    path('form', views.form, name='form')
 ]
