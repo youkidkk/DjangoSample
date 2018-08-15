@@ -15,7 +15,7 @@ def urlpattern(request, number, text):
     result = "Number: {0}, Text: {1}".format(str(number), text)
     return HttpResponse(result)
 
-def sampletmpl(request):
+def template(request):
     params = {
         "title": "Sample Template",
         "message": "Sample Template Page!",

@@ -11,5 +11,5 @@ urlpatterns = [
     path('urlpattern/<int:number>/<text>/',
          views.urlpattern, name='urlpattern'),
     # ～/sampletmpl
-    path('sampletmpl', views.sampletmpl, name='sampletmpl')
+    path('template', views.template, name='template')
 ]
