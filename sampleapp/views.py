@@ -1,5 +1,6 @@
-from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import render
+
 
 def httpresponse(request):
     return HttpResponse("Hello!!!")
@@ -13,3 +14,10 @@ def queryparam(request):
 def urlpattern(request, number, text):
     result = "Number: {0}, Text: {1}".format(str(number), text)
     return HttpResponse(result)
+
+def sampletmpl(request):
+    params = {
+        "title": "Sample Template",
+        "message": "Sample Template Page!",
+    }
+    return render(request, "sampleapp/sampletmpl.html", params)

@@ -8,5 +8,8 @@ urlpatterns = [
     # ～/queryparam?msg=・・・
     path('queryparam', views.queryparam, name='queryparam'),
     # ～/urlpattern/<number>/<text>/
-    path('urlpattern/<int:number>/<text>/', views.urlpattern, name='urlpattern'),
+    path('urlpattern/<int:number>/<text>/',
+         views.urlpattern, name='urlpattern'),
+    # ～/sampletmpl
+    path('sampletmpl', views.sampletmpl, name='sampletmpl')
 ]
