@@ -9,3 +9,7 @@ def queryparam(request):
     if "msg" in request.GET:
         msg = "'{0}'".format(request.GET["msg"])
     return HttpResponse("Message is {0}.".format(msg))
+
+def urlpattern(request, number, text):
+    result = "Number: {0}, Text: {1}".format(str(number), text)
+    return HttpResponse(result)
