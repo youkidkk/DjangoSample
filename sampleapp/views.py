@@ -21,3 +21,6 @@ def template(request):
         "message": "Sample Template Page!",
     }
     return render(request, "sampleapp/sampletmpl.html", params)
+
+def link(request):
+    return render(request, "sampleapp/link.html")
