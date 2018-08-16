@@ -20,5 +20,13 @@ urlpatterns = [
     path('basicform', views.basicform, name='basicform'),
     path('basicformsubmit', views.basicformsubmit, name='basicformsubmit'),
     # ～/form
-    path('form', views.form, name='form')
+    path('form', views.form, name='form'),
+    # ～/list
+    path('list', views.list, name='list'),
+    # ～/create
+    path('create', views.create, name='create'),
+    # ～/update/<id>
+    path('update/<int:id>', views.update, name='update'),
+    # ～/delete/<id>
+    path('delete/<int:id>', views.delete, name='delete'),
 ]

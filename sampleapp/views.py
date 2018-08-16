@@ -1,7 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
-from .forms import SampleForm
+from .forms import SampleForm, SampleModelForm
+from .models import SampleModel
 
 
 def httpresponse(request):
@@ -77,3 +78,46 @@ def form(request):
         )
         params["form"] = SampleForm(request.POST)
     return render(request, "sampleapp/form.html", params)
+
+
+def list(request):
+    data = SampleModel.objects.all()
+    params = {
+        "message": "",
+        "data": data,
+    }
+    return render(request, "sampleapp/list.html", params)
+
+
+def create(request):
+    if request.method == "POST":
+        item = SampleModel()
+        form = SampleModelForm(request.POST, instance=item)
+        form.save()
+        return redirect(to="/sampleapp/list")
+    params = {
+        "message": "",
+        "form": SampleModelForm(),
+        "button_txt": "Create",
+    }
+    return render(request, "sampleapp/edit.html", params)
+
+
+def update(request, id):
+    item = SampleModel.objects.get(id=id)
+    if request.method == "POST":
+        form = SampleModelForm(request.POST, instance=item)
+        form.save()
+        return redirect(to="/sampleapp/list")
+    params = {
+        "message": "",
+        "id": id,
+        "form": SampleModelForm(instance=item),
+        "button_txt": "Update",
+    }
+    return render(request, "sampleapp/edit.html", params)
+
+def delete(request, id):
+    item = SampleModel.objects.get(id=id)
+    item.delete()
+    return redirect(to="/sampleapp/list")

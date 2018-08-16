@@ -1,0 +1,37 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>List Sample</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'sampleapp/css/style.css' %}" />
+</head>
+<body>
+    <h1>List Sample</h1>
+    <p>{{message}}</p>
+    <p><a href="{% url 'create' %}">Create</a></p>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>Text</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Check</th>
+            <th></th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{item.number}}</td>
+            <td>{{item.text}}</td>
+            <td>{{item.date}}</td>
+            <td>{{item.time}}</td>
+            <td>{{item.check}}</td>
+            <td>
+                <a href="{% url 'update' item.id %}">Edit</a>
+                <a href="{% url 'delete' item.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
