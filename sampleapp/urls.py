@@ -29,4 +29,7 @@ urlpatterns = [
     path('update/<int:id>', views.update, name='update'),
     # ～/delete/<id>
     path('delete/<int:id>', views.delete, name='delete'),
+    # ～/listpaging
+    path('listpaging', views.listpaging, name='listpaging'),
+    path('listpaging/<int:page>', views.listpaging, name='listpaging'),
 ]

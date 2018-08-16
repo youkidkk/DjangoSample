@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from django.core.paginator import Paginator
 
 from .forms import SampleForm, SampleModelForm
 from .models import SampleModel
@@ -121,3 +122,13 @@ def delete(request, id):
     item = SampleModel.objects.get(id=id)
     item.delete()
     return redirect(to="/sampleapp/list")
+    
+
+def listpaging(request, page=1):
+    data = SampleModel.objects.all()
+    paginator = Paginator(data, 5)
+    params = {
+        "message": "",
+        "data": paginator.get_page(page),
+    }
+    return render(request, "sampleapp/listpaging.html", params)
