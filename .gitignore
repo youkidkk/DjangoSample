@@ -4,3 +4,4 @@
 /Pipfile.lock
 /tmp
 /**/__pycache__
+/**/migrations/**
