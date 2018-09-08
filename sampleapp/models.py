@@ -15,3 +15,9 @@ class SampleModel(models.Model):
 
 class ForeignKeySampleModel(models.Model):
     sampleModel = models.ForeignKey(SampleModel, on_delete=models.CASCADE)
+
+class ManyToManyParentModel(models.Model):
+    text = models.TextField()
+
+class ManyToManyChildModel(models.Model):
+    manyToManyParentParentModel = models.ManyToManyField(ManyToManyParentModel)
