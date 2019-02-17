@@ -118,11 +118,12 @@ def update(request, id):
     }
     return render(request, "sampleapp/edit.html", params)
 
+
 def delete(request, id):
     item = SampleModel.objects.get(id=id)
     item.delete()
     return redirect(to="/sampleapp/list")
-    
+
 
 def listpaging(request, page=1):
     data = SampleModel.objects.all()
